@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Chat app</title>
+  </head>
+
+  <body>
+    <div class="main-container" id="wrapper">
+      <div class="row col-12">
+        <div class="col-4">&nbsp;</div>
+        <h1 class="col-4">The Coolest Chat</h1>
+        <div class="col-4 hide">&nbsp;</div>
+      </div>
+
+      <div class="row col-12">
+        <div class="col-4">&nbsp;</div>
+        <h3 class="col-4">Choose a chatroom</h3>
+        <div class="col-4">&nbsp;</div>
+      </div>
+
+      <div class="row col-12 rooms">
+        <div class="col-3 chDiv">
+          <button type="button" class="channel" id="general">#general</button>
+        </div>
+        <div class="col-3 chDiv">
+          <button type="button" class="channel" id="js">#js</button>
+        </div>
+        <div class="col-3 chDiv">
+          <button type="button" class="channel" id="homeworks">
+            #homeworks
+          </button>
+        </div>
+        <div class="col-3 chDiv">
+          <button type="button" class="channel" id="tests">#tests</button>
+        </div>
+      </div>
+      <!-- SECTION -->
+      <div class="row col-12 messages">
+        <div class="col-2 hide">&nbsp;</div>
+        <section class="col-8 section">
+          <ul></ul>
+        </section>
+        <div class="col-2">&nbsp;</div>
+      </div>
+      <!-- INPUT -->
+      <div class="new-user row col-12">
+        <div class="col-12" id="newUser"></div>
+      </div>
+      <div class="input-container row col-12">
+        <div class="row col-12 divIn">
+          <div class="col-2 new-user">&nbsp;</div>
+          <input
+            type="text"
+            placeholder="Your message..."
+            class="col-6 in"
+            id="inputSend"
+          />
+          <button class="col-2 btn" id="sendBtn">Send</button>
+          <div class="col-2">&nbsp;</div>
+        </div>
+
+        <div class="row col-12 divIn">
+          <div class="col-2 hide">&nbsp;</div>
+          <input
+            type="text"
+            placeholder="Update username"
+            class="col-6 in"
+            id="inputUpdate"
+          />
+          <button id="update" class="col-2 btn">Update</button>
+          <div class="col-2 hide" id="newUser"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC9WhXnwMMsDnjoc_J2R5qAL0ek4zj9hQ4",
+        authDomain: "chat-126a0.firebaseapp.com",
+        projectId: "chat-126a0",
+        storageBucket: "chat-126a0.appspot.com",
+        messagingSenderId: "944739421446",
+        appId: "1:944739421446:web:24c2f87d22effc74722287",
+        measurementId: "G-NPBR6VLFPH",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+    </script>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
