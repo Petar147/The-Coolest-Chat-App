@@ -72,7 +72,7 @@ update.addEventListener("click", () => {
     newUser.style.display = "inline";
 
     setTimeout(function () {
-      newUser.innerHTML = ``;
+      newUser.innerHTML = "";
       inputUpdate.value = "";
     }, 3000);
   } else {

@@ -45,7 +45,7 @@ export default class Chatroom {
       message: msg,
       username: this.username,
       room: this.room,
-      created_at: firebase.firestore.Timestamp.fromDate(date),
+      created_at: firebase.firestore.Timestamp.fromDate(date), //kreira objekat od date objekta
     };
 
     let response = await this.chats.add(docChat); //Da sacuvam dokument u db
@@ -57,7 +57,7 @@ export default class Chatroom {
     this.unsub = this.chats
       .orderBy("created_at")
       .where("room", "==", this.room)
-      .onSnapshot((snapshot) => {
+      .onSnapshot((snapshot) => { //real time listener
         let change = snapshot.docChanges();
         change.forEach((change) => {
           if (change.type == "added") {
